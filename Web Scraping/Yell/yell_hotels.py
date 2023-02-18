@@ -29,7 +29,7 @@ driver.quit()
 data = BeautifulSoup(content,'html.parser')
 
 i = 1
-list_hotels,list_location,list_rating=[],[],[]
+list_hotels,list_location,list_rating,list_link=[],[],[],[]
 for area in data.find_all('div',class_="row businessCapsule--mainRow"):
     print(str(i))
     name = str(area.find('h2', class_="businessCapsule--name text-h2"))
@@ -57,7 +57,7 @@ for area in data.find_all('div',class_="row businessCapsule--mainRow"):
     print("--------------------")
     i += 1
 
-df = pd.DataFrame({'Hotels':list_hotels,'Location':list_location, 'Rating':list_rating })
+df = pd.DataFrame({'Hotels':list_hotels,'Location':list_location, 'Rating':list_rating})
 writer = pd.ExcelWriter('Web Scraping/Yell/Hotels.xlsx')
 df.to_excel(writer,'Sheet1',index=False)
 writer.close()
