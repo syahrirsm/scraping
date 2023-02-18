@@ -22,7 +22,7 @@ for i in range(1,7):
 
 # time.sleep(5)
 
-driver.save_screenshot("shoope.png")
+driver.save_screenshot("Shopee/shoope.png")
 content = driver.page_source
 driver.quit()
 
@@ -62,6 +62,6 @@ for area in data.find_all('div',class_="col-xs-2-4 shopee-search-item-result__it
     i+=1
 
 df = pd.DataFrame({'Nama':list_nama,'Harga':list_harga, 'Terjual':list_terjual })
-writer = pd.ExcelWriter('macbook.xlsx')
+writer = pd.ExcelWriter('Shopee/macbook.xlsx')
 df.to_excel(writer,'Sheet1',index=False)
 writer.close()
