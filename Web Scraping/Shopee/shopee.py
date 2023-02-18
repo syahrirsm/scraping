@@ -22,7 +22,7 @@ for i in range(1,7):
 
 # time.sleep(5)
 
-driver.save_screenshot("Shopee/shoope.png")
+driver.save_screenshot("Web Scraping/Shopee/shoope.png")
 content = driver.page_source
 driver.quit()
 
@@ -51,9 +51,7 @@ for area in data.find_all('div',class_="col-xs-2-4 shopee-search-item-result__it
     terjual = get_text(terjual)
 
     list_nama.append(nama)
-    # list_gambar.append(gambar)
     list_harga.append(harga)
-    # list_link.append(link)
     list_terjual.append(terjual)
 
     print(nama)
@@ -62,6 +60,6 @@ for area in data.find_all('div',class_="col-xs-2-4 shopee-search-item-result__it
     i+=1
 
 df = pd.DataFrame({'Nama':list_nama,'Harga':list_harga, 'Terjual':list_terjual })
-writer = pd.ExcelWriter('Shopee/macbook.xlsx')
+writer = pd.ExcelWriter('Web Scraping/Shopee/macbook.xlsx')
 df.to_excel(writer,'Sheet1',index=False)
 writer.close()
