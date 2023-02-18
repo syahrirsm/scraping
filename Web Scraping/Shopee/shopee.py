@@ -27,7 +27,6 @@ content = driver.page_source
 driver.quit()
 
 data = BeautifulSoup(content,'html.parser')
-# print(data.encode("utf-8"))
 i=1
 
 def get_text(x):
