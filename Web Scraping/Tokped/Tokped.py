@@ -22,6 +22,15 @@ driver = webdriver.Chrome()
 tokped_link = "https://www.tokopedia.com/search?st=product&q=macbook&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
 driver.set_window_size(1300, 800)
 driver.get(tokped_link)
+
+rentang = 500
+for i in range(1,7):
+    akhir = rentang * i 
+    perintah = "window.scrollTo(0,"+str(akhir)+")"
+    driver.execute_script(perintah)
+    print("loading ke-"+str(i))
+    time.sleep(1)
+
 driver.save_screenshot("Web Scraping/Tokped/macbook.png")
 time.sleep(5)
 content = driver.page_source
@@ -42,6 +51,15 @@ for area in data.find_all('div',class_="pcv3__container css-gfx8z3"):
 
 tokped_link = "https://www.tokopedia.com/search?st=product&q=lenovo&srp_component_id=01.07.00.00&srp_page_id=&srp_page_title=&navsource="
 driver.get(tokped_link)
+
+rentang = 500
+for i in range(1,7):
+    akhir = rentang * i 
+    perintah = "window.scrollTo(0,"+str(akhir)+")"
+    driver.execute_script(perintah)
+    print("loading ke-"+str(i))
+    time.sleep(1)
+    
 driver.save_screenshot("Web Scraping/Tokped/lenovo.png")
 time.sleep(5)
 content = driver.page_source
