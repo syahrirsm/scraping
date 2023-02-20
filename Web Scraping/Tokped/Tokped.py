@@ -19,8 +19,8 @@ def get_text(x):
 # driver = webdriver.Chrome(service = servis, options=opsi)
 
 driver = webdriver.Chrome()
-tokped_link = "https://www.tokopedia.com/search?st=product&q=macbook&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
 driver.set_window_size(1300, 800)
+tokped_link = "https://www.tokopedia.com/search?st=product&q=macbook&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
 driver.get(tokped_link)
 
 rentang = 500
@@ -59,7 +59,7 @@ for i in range(1,7):
     driver.execute_script(perintah)
     print("loading ke-"+str(i))
     time.sleep(1)
-    
+
 driver.save_screenshot("Web Scraping/Tokped/lenovo.png")
 time.sleep(5)
 content = driver.page_source
