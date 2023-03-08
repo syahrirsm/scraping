@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BBC</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <h1>BBC Link</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Link</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {% for getData in items %}
+        <tr>
+          <td>{{getData.id}}</td>
+          <td>{{getData.link}}</td>
+          
+          {% if getData.title %}
+          <td>{{getData.title}}</td>
+          {% else %}
+          <td>-</td>
+          {% endif %}
+            
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </body>
+</html>
